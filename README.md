@@ -101,10 +101,9 @@ To avoid brute-forcing thousands of combinations, the algorithm:
 
 This is the "limit search intelligently" hint from the takehome—social proximity + interest matching makes the search tractable while preserving quality.
 
-## Relevant research
-https://link.springer.com/article/10.1007/s11257-023-09360-3?
-https://arxiv.org/abs/2006.08893?
-
+### Relevant research
+- https://link.springer.com/article/10.1007/s11257-023-09360-3
+- https://arxiv.org/abs/2006.08893
 ---
 
 ## The Propagation Flywheel
