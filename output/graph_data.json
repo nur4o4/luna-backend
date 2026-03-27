@@ -1,0 +1,3563 @@
+{
+  "nodes": [
+    {
+      "id": "u0",
+      "name": "Chad",
+      "interests": [
+        "hackathons",
+        "startup meetups",
+        "cold plunge",
+        "rooftop bars"
+      ],
+      "availability": [
+        "wed_7pm",
+        "thu_7pm",
+        "fri_9pm",
+        "sat_9pm"
+      ],
+      "friends": [
+        "u1",
+        "u2",
+        "u3",
+        "u4"
+      ],
+      "initiator_score": 0.85,
+      "past_coattendance": {
+        "u1": 5,
+        "u2": 3,
+        "u3": 4
+      },
+      "personality": {
+        "openness": 0.55,
+        "agreeableness": 0.5,
+        "energy": 0.9
+      }
+    },
+    {
+      "id": "u1",
+      "name": "Bryce",
+      "interests": [
+        "hackathons",
+        "crypto talks",
+        "cold plunge",
+        "startup meetups"
+      ],
+      "availability": [
+        "wed_7pm",
+        "thu_7pm",
+        "fri_9pm",
+        "sat_7pm"
+      ],
+      "friends": [
+        "u0",
+        "u2",
+        "u3",
+        "u5"
+      ],
+      "initiator_score": 0.7,
+      "past_coattendance": {
+        "u0": 5,
+        "u2": 4,
+        "u3": 3
+      },
+      "personality": {
+        "openness": 0.45,
+        "agreeableness": 0.55,
+        "energy": 0.8
+      }
+    },
+    {
+      "id": "u2",
+      "name": "Jared",
+      "interests": [
+        "startup meetups",
+        "hackathons",
+        "sauna clubs",
+        "rock climbing gyms"
+      ],
+      "availability": [
+        "wed_7pm",
+        "thu_7pm",
+        "sat_9pm",
+        "fri_7pm"
+      ],
+      "friends": [
+        "u0",
+        "u1",
+        "u3"
+      ],
+      "initiator_score": 0.6,
+      "past_coattendance": {
+        "u0": 3,
+        "u1": 4,
+        "u3": 2
+      },
+      "personality": {
+        "openness": 0.6,
+        "agreeableness": 0.5,
+        "energy": 0.7
+      }
+    },
+    {
+      "id": "u3",
+      "name": "Kyle",
+      "interests": [
+        "crypto talks",
+        "cold plunge",
+        "hackathons",
+        "cocktail bars"
+      ],
+      "availability": [
+        "wed_7pm",
+        "thu_7pm",
+        "fri_9pm",
+        "sat_9pm"
+      ],
+      "friends": [
+        "u0",
+        "u1",
+        "u2",
+        "u7"
+      ],
+      "initiator_score": 0.55,
+      "past_coattendance": {
+        "u0": 4,
+        "u1": 3,
+        "u2": 2
+      },
+      "personality": {
+        "openness": 0.5,
+        "agreeableness": 0.45,
+        "energy": 0.75
+      }
+    },
+    {
+      "id": "u4",
+      "name": "Mia",
+      "interests": [
+        "art galleries",
+        "indie cinemas",
+        "brunch spots",
+        "yoga studios"
+      ],
+      "availability": [
+        "sat_12pm",
+        "sun_11am",
+        "sun_3pm",
+        "fri_7pm"
+      ],
+      "friends": [
+        "u0",
+        "u5"
+      ],
+      "initiator_score": 0.4,
+      "past_coattendance": {
+        "u5": 3
+      },
+      "personality": {
+        "openness": 0.8,
+        "agreeableness": 0.75,
+        "energy": 0.4
+      }
+    },
+    {
+      "id": "u5",
+      "name": "Sofia",
+      "interests": [
+        "yoga studios",
+        "brunch spots",
+        "bookshop cafes",
+        "hiking trails"
+      ],
+      "availability": [
+        "sat_12pm",
+        "sun_11am",
+        "sun_3pm",
+        "sat_3pm"
+      ],
+      "friends": [
+        "u1",
+        "u4",
+        "u6",
+        "u8"
+      ],
+      "initiator_score": 0.65,
+      "past_coattendance": {
+        "u4": 3,
+        "u6": 4,
+        "u8": 2
+      },
+      "personality": {
+        "openness": 0.7,
+        "agreeableness": 0.8,
+        "energy": 0.55
+      }
+    },
+    {
+      "id": "u6",
+      "name": "Lena",
+      "interests": [
+        "poetry readings",
+        "bookshop cafes",
+        "italian trattorias",
+        "meditation centers"
+      ],
+      "availability": [
+        "sun_11am",
+        "sun_3pm",
+        "sat_3pm",
+        "sat_7pm"
+      ],
+      "friends": [
+        "u5",
+        "u9"
+      ],
+      "initiator_score": 0.3,
+      "past_coattendance": {
+        "u5": 4,
+        "u9": 2
+      },
+      "personality": {
+        "openness": 0.85,
+        "agreeableness": 0.9,
+        "energy": 0.25
+      }
+    },
+    {
+      "id": "u7",
+      "name": "Omar",
+      "interests": [
+        "boxing gyms",
+        "taco joints",
+        "live music venues",
+        "dance clubs"
+      ],
+      "availability": [
+        "fri_7pm",
+        "fri_9pm",
+        "sat_9pm",
+        "thu_7pm"
+      ],
+      "friends": [
+        "u3"
+      ],
+      "initiator_score": 0.45,
+      "past_coattendance": {
+        "u3": 1
+      },
+      "personality": {
+        "openness": 0.35,
+        "agreeableness": 0.3,
+        "energy": 0.8
+      }
+    },
+    {
+      "id": "u8",
+      "name": "Priya",
+      "interests": [
+        "hiking trails",
+        "yoga studios",
+        "art galleries",
+        "comedy clubs"
+      ],
+      "availability": [
+        "sat_12pm",
+        "sat_3pm",
+        "sun_11am",
+        "sun_3pm"
+      ],
+      "friends": [
+        "u5",
+        "u9"
+      ],
+      "initiator_score": 0.35,
+      "past_coattendance": {
+        "u5": 2,
+        "u9": 3
+      },
+      "personality": {
+        "openness": 0.65,
+        "agreeableness": 0.7,
+        "energy": 0.35
+      }
+    },
+    {
+      "id": "u9",
+      "name": "James",
+      "interests": [
+        "comedy clubs",
+        "live music venues",
+        "taco joints",
+        "hiking trails"
+      ],
+      "availability": [
+        "fri_7pm",
+        "sat_7pm",
+        "sat_9pm",
+        "sun_3pm"
+      ],
+      "friends": [
+        "u6",
+        "u8"
+      ],
+      "initiator_score": 0.5,
+      "past_coattendance": {
+        "u6": 2,
+        "u8": 3
+      },
+      "personality": {
+        "openness": 0.5,
+        "agreeableness": 0.6,
+        "energy": 0.55
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "u0",
+      "target": "u1"
+    },
+    {
+      "source": "u0",
+      "target": "u2"
+    },
+    {
+      "source": "u0",
+      "target": "u3"
+    },
+    {
+      "source": "u0",
+      "target": "u4"
+    },
+    {
+      "source": "u1",
+      "target": "u2"
+    },
+    {
+      "source": "u1",
+      "target": "u3"
+    },
+    {
+      "source": "u1",
+      "target": "u5"
+    },
+    {
+      "source": "u2",
+      "target": "u3"
+    },
+    {
+      "source": "u3",
+      "target": "u7"
+    },
+    {
+      "source": "u4",
+      "target": "u5"
+    },
+    {
+      "source": "u5",
+      "target": "u6"
+    },
+    {
+      "source": "u5",
+      "target": "u8"
+    },
+    {
+      "source": "u6",
+      "target": "u9"
+    },
+    {
+      "source": "u8",
+      "target": "u9"
+    }
+  ],
+  "venues": [
+    {
+      "id": "v1",
+      "name": "Blue Note Jazz Club",
+      "category": "nightlife",
+      "tags": [
+        "jazz clubs",
+        "cocktail bars"
+      ]
+    },
+    {
+      "id": "v2",
+      "name": "Sunset Rooftop Bar",
+      "category": "nightlife",
+      "tags": [
+        "rooftop bars",
+        "live music venues"
+      ]
+    },
+    {
+      "id": "v3",
+      "name": "Omotenashi Sushi",
+      "category": "dining",
+      "tags": [
+        "sushi restaurants",
+        "fine dining"
+      ]
+    },
+    {
+      "id": "v4",
+      "name": "Nonna's Trattoria",
+      "category": "dining",
+      "tags": [
+        "italian trattorias",
+        "brunch spots"
+      ]
+    },
+    {
+      "id": "v5",
+      "name": "Runyon Canyon Trail",
+      "category": "outdoors",
+      "tags": [
+        "hiking trails",
+        "bike paths"
+      ]
+    },
+    {
+      "id": "v6",
+      "name": "The Laugh Factory",
+      "category": "culture",
+      "tags": [
+        "comedy clubs",
+        "live music venues"
+      ]
+    },
+    {
+      "id": "v7",
+      "name": "Golden Hour Gallery",
+      "category": "culture",
+      "tags": [
+        "art galleries",
+        "bookshop cafes"
+      ]
+    },
+    {
+      "id": "v8",
+      "name": "Taqueria El Sol",
+      "category": "dining",
+      "tags": [
+        "taco joints",
+        "brunch spots"
+      ]
+    },
+    {
+      "id": "v9",
+      "name": "Summit Climbing Gym",
+      "category": "outdoors",
+      "tags": [
+        "rock climbing gyms",
+        "boxing gyms"
+      ]
+    },
+    {
+      "id": "v10",
+      "name": "Bodhi Yoga Studio",
+      "category": "wellness",
+      "tags": [
+        "yoga studios",
+        "meditation centers"
+      ]
+    },
+    {
+      "id": "v11",
+      "name": "Founders House Co-work",
+      "category": "tech",
+      "tags": [
+        "startup meetups",
+        "hackathons"
+      ]
+    },
+    {
+      "id": "v12",
+      "name": "Bathhouse Williamsburg",
+      "category": "tech",
+      "tags": [
+        "sauna clubs",
+        "cold plunge"
+      ]
+    }
+  ],
+  "user_data": {
+    "u0": {
+      "candidates": [
+        "u1",
+        "u2",
+        "u7",
+        "u4",
+        "u3",
+        "u5"
+      ],
+      "recommendations": [
+        {
+          "venue": {
+            "id": "v1",
+            "name": "Blue Note Jazz Club",
+            "category": "nightlife",
+            "tags": [
+              "jazz clubs",
+              "cocktail bars"
+            ]
+          },
+          "members": [
+            "u0",
+            "u1",
+            "u3"
+          ],
+          "score": 1.0,
+          "breakdown": {
+            "shared_interests": 0.908,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.553,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u0": 0.301,
+            "u1": 0.367,
+            "u3": 0.332
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v11",
+            "name": "Founders House Co-work",
+            "category": "tech",
+            "tags": [
+              "startup meetups",
+              "hackathons"
+            ]
+          },
+          "members": [
+            "u0",
+            "u1",
+            "u3"
+          ],
+          "score": 1.0,
+          "breakdown": {
+            "shared_interests": 0.908,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.553,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u0": 0.32,
+            "u1": 0.391,
+            "u3": 0.289
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v12",
+            "name": "Bathhouse Williamsburg",
+            "category": "tech",
+            "tags": [
+              "sauna clubs",
+              "cold plunge"
+            ]
+          },
+          "members": [
+            "u0",
+            "u1",
+            "u2",
+            "u3"
+          ],
+          "score": 0.986,
+          "breakdown": {
+            "shared_interests": 0.627,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.56,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u0": 0.248,
+            "u1": 0.302,
+            "u2": 0.203,
+            "u3": 0.248
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v2",
+            "name": "Sunset Rooftop Bar",
+            "category": "nightlife",
+            "tags": [
+              "rooftop bars",
+              "live music venues"
+            ]
+          },
+          "members": [
+            "u0",
+            "u1",
+            "u3"
+          ],
+          "score": 0.959,
+          "breakdown": {
+            "shared_interests": 0.908,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.553,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u0": 0.332,
+            "u1": 0.367,
+            "u3": 0.301
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v5",
+            "name": "Runyon Canyon Trail",
+            "category": "outdoors",
+            "tags": [
+              "hiking trails",
+              "bike paths"
+            ]
+          },
+          "members": [
+            "u0",
+            "u1",
+            "u3"
+          ],
+          "score": 0.95,
+          "breakdown": {
+            "shared_interests": 0.908,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.553,
+            "venue_affinity": 0.0,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u0": 0.31,
+            "u1": 0.379,
+            "u3": 0.31
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        }
+      ]
+    },
+    "u1": {
+      "candidates": [
+        "u2",
+        "u6",
+        "u8",
+        "u0",
+        "u7",
+        "u4",
+        "u3",
+        "u5"
+      ],
+      "recommendations": [
+        {
+          "venue": {
+            "id": "v1",
+            "name": "Blue Note Jazz Club",
+            "category": "nightlife",
+            "tags": [
+              "jazz clubs",
+              "cocktail bars"
+            ]
+          },
+          "members": [
+            "u1",
+            "u0",
+            "u3"
+          ],
+          "score": 1.0,
+          "breakdown": {
+            "shared_interests": 0.908,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.553,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u1": 0.367,
+            "u0": 0.301,
+            "u3": 0.332
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v11",
+            "name": "Founders House Co-work",
+            "category": "tech",
+            "tags": [
+              "startup meetups",
+              "hackathons"
+            ]
+          },
+          "members": [
+            "u1",
+            "u0",
+            "u3"
+          ],
+          "score": 1.0,
+          "breakdown": {
+            "shared_interests": 0.908,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.553,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u1": 0.391,
+            "u0": 0.32,
+            "u3": 0.289
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v12",
+            "name": "Bathhouse Williamsburg",
+            "category": "tech",
+            "tags": [
+              "sauna clubs",
+              "cold plunge"
+            ]
+          },
+          "members": [
+            "u1",
+            "u2",
+            "u0",
+            "u3"
+          ],
+          "score": 0.992,
+          "breakdown": {
+            "shared_interests": 0.627,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.56,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u1": 0.302,
+            "u2": 0.203,
+            "u0": 0.248,
+            "u3": 0.248
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v2",
+            "name": "Sunset Rooftop Bar",
+            "category": "nightlife",
+            "tags": [
+              "rooftop bars",
+              "live music venues"
+            ]
+          },
+          "members": [
+            "u1",
+            "u2",
+            "u0"
+          ],
+          "score": 0.964,
+          "breakdown": {
+            "shared_interests": 0.519,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.562,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u1": 0.342,
+            "u2": 0.28,
+            "u0": 0.378
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v9",
+            "name": "Summit Climbing Gym",
+            "category": "outdoors",
+            "tags": [
+              "rock climbing gyms",
+              "boxing gyms"
+            ]
+          },
+          "members": [
+            "u1",
+            "u2",
+            "u0"
+          ],
+          "score": 0.95,
+          "breakdown": {
+            "shared_interests": 0.519,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.562,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u1": 0.344,
+            "u2": 0.311,
+            "u0": 0.344
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        }
+      ]
+    },
+    "u2": {
+      "candidates": [
+        "u1",
+        "u0",
+        "u7",
+        "u4",
+        "u3",
+        "u5"
+      ],
+      "recommendations": [
+        {
+          "venue": {
+            "id": "v11",
+            "name": "Founders House Co-work",
+            "category": "tech",
+            "tags": [
+              "startup meetups",
+              "hackathons"
+            ]
+          },
+          "members": [
+            "u2",
+            "u0",
+            "u3"
+          ],
+          "score": 1.0,
+          "breakdown": {
+            "shared_interests": 0.431,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.586,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u2": 0.32,
+            "u0": 0.391,
+            "u3": 0.289
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v12",
+            "name": "Bathhouse Williamsburg",
+            "category": "tech",
+            "tags": [
+              "sauna clubs",
+              "cold plunge"
+            ]
+          },
+          "members": [
+            "u2",
+            "u0",
+            "u3"
+          ],
+          "score": 0.977,
+          "breakdown": {
+            "shared_interests": 0.431,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.586,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u2": 0.31,
+            "u0": 0.379,
+            "u3": 0.31
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v2",
+            "name": "Sunset Rooftop Bar",
+            "category": "nightlife",
+            "tags": [
+              "rooftop bars",
+              "live music venues"
+            ]
+          },
+          "members": [
+            "u2",
+            "u1",
+            "u0",
+            "u3"
+          ],
+          "score": 0.972,
+          "breakdown": {
+            "shared_interests": 0.627,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.56,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u2": 0.198,
+            "u1": 0.295,
+            "u0": 0.267,
+            "u3": 0.241
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v9",
+            "name": "Summit Climbing Gym",
+            "category": "outdoors",
+            "tags": [
+              "rock climbing gyms",
+              "boxing gyms"
+            ]
+          },
+          "members": [
+            "u2",
+            "u1",
+            "u3"
+          ],
+          "score": 0.934,
+          "breakdown": {
+            "shared_interests": 0.726,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.485,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u2": 0.289,
+            "u1": 0.391,
+            "u3": 0.32
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v7",
+            "name": "Golden Hour Gallery",
+            "category": "culture",
+            "tags": [
+              "art galleries",
+              "bookshop cafes"
+            ]
+          },
+          "members": [
+            "u2",
+            "u1",
+            "u0",
+            "u3"
+          ],
+          "score": 0.919,
+          "breakdown": {
+            "shared_interests": 0.627,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.56,
+            "venue_affinity": 0.0,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u2": 0.203,
+            "u1": 0.302,
+            "u0": 0.248,
+            "u3": 0.248
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        }
+      ]
+    },
+    "u3": {
+      "candidates": [
+        "u1",
+        "u2",
+        "u7",
+        "u4",
+        "u0",
+        "u5"
+      ],
+      "recommendations": [
+        {
+          "venue": {
+            "id": "v1",
+            "name": "Blue Note Jazz Club",
+            "category": "nightlife",
+            "tags": [
+              "jazz clubs",
+              "cocktail bars"
+            ]
+          },
+          "members": [
+            "u3",
+            "u1",
+            "u0"
+          ],
+          "score": 1.0,
+          "breakdown": {
+            "shared_interests": 0.908,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.553,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u3": 0.332,
+            "u1": 0.367,
+            "u0": 0.301
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v5",
+            "name": "Runyon Canyon Trail",
+            "category": "outdoors",
+            "tags": [
+              "hiking trails",
+              "bike paths"
+            ]
+          },
+          "members": [
+            "u3",
+            "u1",
+            "u2"
+          ],
+          "score": 1.0,
+          "breakdown": {
+            "shared_interests": 0.726,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.485,
+            "venue_affinity": 0.0,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u3": 0.329,
+            "u1": 0.402,
+            "u2": 0.269
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v11",
+            "name": "Founders House Co-work",
+            "category": "tech",
+            "tags": [
+              "startup meetups",
+              "hackathons"
+            ]
+          },
+          "members": [
+            "u3",
+            "u1",
+            "u0"
+          ],
+          "score": 1.0,
+          "breakdown": {
+            "shared_interests": 0.908,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.553,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u3": 0.289,
+            "u1": 0.391,
+            "u0": 0.32
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v12",
+            "name": "Bathhouse Williamsburg",
+            "category": "tech",
+            "tags": [
+              "sauna clubs",
+              "cold plunge"
+            ]
+          },
+          "members": [
+            "u3",
+            "u1",
+            "u2"
+          ],
+          "score": 1.0,
+          "breakdown": {
+            "shared_interests": 0.726,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.485,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u3": 0.329,
+            "u1": 0.402,
+            "u2": 0.269
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        },
+        {
+          "venue": {
+            "id": "v2",
+            "name": "Sunset Rooftop Bar",
+            "category": "nightlife",
+            "tags": [
+              "rooftop bars",
+              "live music venues"
+            ]
+          },
+          "members": [
+            "u3",
+            "u2",
+            "u0"
+          ],
+          "score": 0.986,
+          "breakdown": {
+            "shared_interests": 0.431,
+            "availability_overlap": 1.0,
+            "past_coattendance": 1.0,
+            "social_cohesion": 1.0,
+            "personality_compatibility": 0.586,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u3": 0.299,
+            "u2": 0.299,
+            "u0": 0.403
+          },
+          "adaptive_weights": {
+            "interests": 0.2,
+            "availability": 0.3,
+            "past": 0.3,
+            "cohesion": 0.05
+          },
+          "weight_context": "close-knit group \u2192 boosted past success"
+        }
+      ]
+    },
+    "u4": {
+      "candidates": [
+        "u1",
+        "u2",
+        "u6",
+        "u8",
+        "u0",
+        "u3",
+        "u5"
+      ],
+      "recommendations": [
+        {
+          "venue": {
+            "id": "v10",
+            "name": "Bodhi Yoga Studio",
+            "category": "wellness",
+            "tags": [
+              "yoga studios",
+              "meditation centers"
+            ]
+          },
+          "members": [
+            "u4",
+            "u6",
+            "u5"
+          ],
+          "score": 0.814,
+          "breakdown": {
+            "shared_interests": 0.454,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.711,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.578,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_11am",
+          "member_affinities": {
+            "u4": 0.302,
+            "u6": 0.247,
+            "u5": 0.451
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v7",
+            "name": "Golden Hour Gallery",
+            "category": "culture",
+            "tags": [
+              "art galleries",
+              "bookshop cafes"
+            ]
+          },
+          "members": [
+            "u4",
+            "u8",
+            "u5"
+          ],
+          "score": 0.804,
+          "breakdown": {
+            "shared_interests": 0.609,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.622,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.582,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sat_12pm",
+          "member_affinities": {
+            "u4": 0.31,
+            "u8": 0.31,
+            "u5": 0.379
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v11",
+            "name": "Founders House Co-work",
+            "category": "tech",
+            "tags": [
+              "startup meetups",
+              "hackathons"
+            ]
+          },
+          "members": [
+            "u4",
+            "u1",
+            "u2",
+            "u3"
+          ],
+          "score": 0.766,
+          "breakdown": {
+            "shared_interests": 0.4,
+            "availability_overlap": 0.825,
+            "past_coattendance": 0.5,
+            "social_cohesion": 0.5,
+            "personality_compatibility": 0.515,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "wed_7pm",
+          "member_affinities": {
+            "u4": 0.06,
+            "u1": 0.39,
+            "u2": 0.261,
+            "u3": 0.289
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v9",
+            "name": "Summit Climbing Gym",
+            "category": "outdoors",
+            "tags": [
+              "rock climbing gyms",
+              "boxing gyms"
+            ]
+          },
+          "members": [
+            "u4",
+            "u8",
+            "u5"
+          ],
+          "score": 0.761,
+          "breakdown": {
+            "shared_interests": 0.609,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.622,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.582,
+            "venue_affinity": 0.0,
+            "emergent_preference": 0.05
+          },
+          "suggested_time": "sat_12pm",
+          "member_affinities": {
+            "u4": 0.31,
+            "u8": 0.31,
+            "u5": 0.379
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v4",
+            "name": "Nonna's Trattoria",
+            "category": "dining",
+            "tags": [
+              "italian trattorias",
+              "brunch spots"
+            ]
+          },
+          "members": [
+            "u4",
+            "u8",
+            "u5"
+          ],
+          "score": 0.758,
+          "breakdown": {
+            "shared_interests": 0.609,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.622,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.582,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sat_12pm",
+          "member_affinities": {
+            "u4": 0.32,
+            "u8": 0.289,
+            "u5": 0.391
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        }
+      ]
+    },
+    "u5": {
+      "candidates": [
+        "u1",
+        "u2",
+        "u6",
+        "u8",
+        "u3",
+        "u9",
+        "u4",
+        "u0"
+      ],
+      "recommendations": [
+        {
+          "venue": {
+            "id": "v7",
+            "name": "Golden Hour Gallery",
+            "category": "culture",
+            "tags": [
+              "art galleries",
+              "bookshop cafes"
+            ]
+          },
+          "members": [
+            "u5",
+            "u6",
+            "u4"
+          ],
+          "score": 0.914,
+          "breakdown": {
+            "shared_interests": 0.454,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.711,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.578,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_11am",
+          "member_affinities": {
+            "u5": 0.451,
+            "u6": 0.247,
+            "u4": 0.302
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v6",
+            "name": "The Laugh Factory",
+            "category": "culture",
+            "tags": [
+              "comedy clubs",
+              "live music venues"
+            ]
+          },
+          "members": [
+            "u5",
+            "u6",
+            "u8",
+            "u9",
+            "u4"
+          ],
+          "score": 0.861,
+          "breakdown": {
+            "shared_interests": 0.498,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.487,
+            "social_cohesion": 0.5,
+            "personality_compatibility": 0.546,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.05
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u5": 0.256,
+            "u6": 0.127,
+            "u8": 0.256,
+            "u9": 0.19,
+            "u4": 0.172
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v10",
+            "name": "Bodhi Yoga Studio",
+            "category": "wellness",
+            "tags": [
+              "yoga studios",
+              "meditation centers"
+            ]
+          },
+          "members": [
+            "u5",
+            "u8",
+            "u4"
+          ],
+          "score": 0.859,
+          "breakdown": {
+            "shared_interests": 0.609,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.622,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.582,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sat_12pm",
+          "member_affinities": {
+            "u5": 0.379,
+            "u8": 0.31,
+            "u4": 0.31
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v4",
+            "name": "Nonna's Trattoria",
+            "category": "dining",
+            "tags": [
+              "italian trattorias",
+              "brunch spots"
+            ]
+          },
+          "members": [
+            "u5",
+            "u6",
+            "u8",
+            "u4"
+          ],
+          "score": 0.829,
+          "breakdown": {
+            "shared_interests": 0.511,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.5,
+            "social_cohesion": 0.5,
+            "personality_compatibility": 0.559,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_11am",
+          "member_affinities": {
+            "u5": 0.382,
+            "u6": 0.161,
+            "u8": 0.217,
+            "u4": 0.24
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v8",
+            "name": "Taqueria El Sol",
+            "category": "dining",
+            "tags": [
+              "taco joints",
+              "brunch spots"
+            ]
+          },
+          "members": [
+            "u5",
+            "u6",
+            "u8",
+            "u9"
+          ],
+          "score": 0.828,
+          "breakdown": {
+            "shared_interests": 0.4,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.644,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.551,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u5": 0.3,
+            "u6": 0.182,
+            "u8": 0.272,
+            "u9": 0.246
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        }
+      ]
+    },
+    "u6": {
+      "candidates": [
+        "u1",
+        "u9",
+        "u8",
+        "u4",
+        "u5"
+      ],
+      "recommendations": [
+        {
+          "venue": {
+            "id": "v4",
+            "name": "Nonna's Trattoria",
+            "category": "dining",
+            "tags": [
+              "italian trattorias",
+              "brunch spots"
+            ]
+          },
+          "members": [
+            "u6",
+            "u9",
+            "u8",
+            "u5"
+          ],
+          "score": 0.853,
+          "breakdown": {
+            "shared_interests": 0.4,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.644,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.551,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u6": 0.202,
+            "u9": 0.223,
+            "u8": 0.273,
+            "u5": 0.302
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v10",
+            "name": "Bodhi Yoga Studio",
+            "category": "wellness",
+            "tags": [
+              "yoga studios",
+              "meditation centers"
+            ]
+          },
+          "members": [
+            "u6",
+            "u9",
+            "u8",
+            "u5"
+          ],
+          "score": 0.849,
+          "breakdown": {
+            "shared_interests": 0.4,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.644,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.551,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u6": 0.197,
+            "u9": 0.217,
+            "u8": 0.293,
+            "u5": 0.293
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v7",
+            "name": "Golden Hour Gallery",
+            "category": "culture",
+            "tags": [
+              "art galleries",
+              "bookshop cafes"
+            ]
+          },
+          "members": [
+            "u6",
+            "u8",
+            "u4",
+            "u5"
+          ],
+          "score": 0.843,
+          "breakdown": {
+            "shared_interests": 0.511,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.5,
+            "social_cohesion": 0.5,
+            "personality_compatibility": 0.559,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_11am",
+          "member_affinities": {
+            "u6": 0.157,
+            "u8": 0.234,
+            "u4": 0.234,
+            "u5": 0.374
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v6",
+            "name": "The Laugh Factory",
+            "category": "culture",
+            "tags": [
+              "comedy clubs",
+              "live music venues"
+            ]
+          },
+          "members": [
+            "u6",
+            "u8",
+            "u5"
+          ],
+          "score": 0.827,
+          "breakdown": {
+            "shared_interests": 0.363,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.667,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.582,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_11am",
+          "member_affinities": {
+            "u6": 0.24,
+            "u8": 0.324,
+            "u5": 0.437
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v8",
+            "name": "Taqueria El Sol",
+            "category": "dining",
+            "tags": [
+              "taco joints",
+              "brunch spots"
+            ]
+          },
+          "members": [
+            "u6",
+            "u4",
+            "u5"
+          ],
+          "score": 0.796,
+          "breakdown": {
+            "shared_interests": 0.454,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.711,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.578,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_11am",
+          "member_affinities": {
+            "u6": 0.229,
+            "u4": 0.309,
+            "u5": 0.461
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        }
+      ]
+    },
+    "u7": {
+      "candidates": [
+        "u1",
+        "u0",
+        "u3",
+        "u2"
+      ],
+      "recommendations": [
+        {
+          "venue": {
+            "id": "v9",
+            "name": "Summit Climbing Gym",
+            "category": "outdoors",
+            "tags": [
+              "rock climbing gyms",
+              "boxing gyms"
+            ]
+          },
+          "members": [
+            "u7",
+            "u1",
+            "u0",
+            "u3",
+            "u2"
+          ],
+          "score": 0.896,
+          "breakdown": {
+            "shared_interests": 0.374,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.713,
+            "social_cohesion": 0.7,
+            "personality_compatibility": 0.552,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.05
+          },
+          "suggested_time": "thu_7pm",
+          "member_affinities": {
+            "u7": 0.105,
+            "u1": 0.258,
+            "u0": 0.212,
+            "u3": 0.234,
+            "u2": 0.191
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v11",
+            "name": "Founders House Co-work",
+            "category": "tech",
+            "tags": [
+              "startup meetups",
+              "hackathons"
+            ]
+          },
+          "members": [
+            "u7",
+            "u1",
+            "u0",
+            "u3"
+          ],
+          "score": 0.871,
+          "breakdown": {
+            "shared_interests": 0.472,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.689,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.555,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "fri_9pm",
+          "member_affinities": {
+            "u7": 0.108,
+            "u1": 0.335,
+            "u0": 0.274,
+            "u3": 0.283
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v12",
+            "name": "Bathhouse Williamsburg",
+            "category": "tech",
+            "tags": [
+              "sauna clubs",
+              "cold plunge"
+            ]
+          },
+          "members": [
+            "u7",
+            "u1",
+            "u0",
+            "u3"
+          ],
+          "score": 0.81,
+          "breakdown": {
+            "shared_interests": 0.472,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.689,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.555,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "fri_9pm",
+          "member_affinities": {
+            "u7": 0.114,
+            "u1": 0.322,
+            "u0": 0.263,
+            "u3": 0.301
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v2",
+            "name": "Sunset Rooftop Bar",
+            "category": "nightlife",
+            "tags": [
+              "rooftop bars",
+              "live music venues"
+            ]
+          },
+          "members": [
+            "u7",
+            "u1",
+            "u0",
+            "u3"
+          ],
+          "score": 0.753,
+          "breakdown": {
+            "shared_interests": 0.472,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.689,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.555,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "fri_9pm",
+          "member_affinities": {
+            "u7": 0.133,
+            "u1": 0.305,
+            "u0": 0.276,
+            "u3": 0.286
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v1",
+            "name": "Blue Note Jazz Club",
+            "category": "nightlife",
+            "tags": [
+              "jazz clubs",
+              "cocktail bars"
+            ]
+          },
+          "members": [
+            "u7",
+            "u1",
+            "u3"
+          ],
+          "score": 0.743,
+          "breakdown": {
+            "shared_interests": 0.454,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.578,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.467,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "fri_9pm",
+          "member_affinities": {
+            "u7": 0.189,
+            "u1": 0.345,
+            "u3": 0.466
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        }
+      ]
+    },
+    "u8": {
+      "candidates": [
+        "u1",
+        "u6",
+        "u9",
+        "u4",
+        "u5"
+      ],
+      "recommendations": [
+        {
+          "venue": {
+            "id": "v10",
+            "name": "Bodhi Yoga Studio",
+            "category": "wellness",
+            "tags": [
+              "yoga studios",
+              "meditation centers"
+            ]
+          },
+          "members": [
+            "u8",
+            "u6",
+            "u9",
+            "u5"
+          ],
+          "score": 0.922,
+          "breakdown": {
+            "shared_interests": 0.4,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.644,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.551,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u8": 0.293,
+            "u6": 0.197,
+            "u9": 0.217,
+            "u5": 0.293
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v8",
+            "name": "Taqueria El Sol",
+            "category": "dining",
+            "tags": [
+              "taco joints",
+              "brunch spots"
+            ]
+          },
+          "members": [
+            "u8",
+            "u6",
+            "u9",
+            "u4",
+            "u5"
+          ],
+          "score": 0.839,
+          "breakdown": {
+            "shared_interests": 0.498,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.487,
+            "social_cohesion": 0.5,
+            "personality_compatibility": 0.546,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u8": 0.231,
+            "u6": 0.127,
+            "u9": 0.171,
+            "u4": 0.189,
+            "u5": 0.282
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v6",
+            "name": "The Laugh Factory",
+            "category": "culture",
+            "tags": [
+              "comedy clubs",
+              "live music venues"
+            ]
+          },
+          "members": [
+            "u8",
+            "u6",
+            "u9",
+            "u4",
+            "u5"
+          ],
+          "score": 0.832,
+          "breakdown": {
+            "shared_interests": 0.498,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.487,
+            "social_cohesion": 0.5,
+            "personality_compatibility": 0.546,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.05
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u8": 0.256,
+            "u6": 0.127,
+            "u9": 0.19,
+            "u4": 0.172,
+            "u5": 0.256
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v4",
+            "name": "Nonna's Trattoria",
+            "category": "dining",
+            "tags": [
+              "italian trattorias",
+              "brunch spots"
+            ]
+          },
+          "members": [
+            "u8",
+            "u6",
+            "u4",
+            "u5"
+          ],
+          "score": 0.83,
+          "breakdown": {
+            "shared_interests": 0.511,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.5,
+            "social_cohesion": 0.5,
+            "personality_compatibility": 0.559,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_11am",
+          "member_affinities": {
+            "u8": 0.217,
+            "u6": 0.161,
+            "u4": 0.24,
+            "u5": 0.382
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v7",
+            "name": "Golden Hour Gallery",
+            "category": "culture",
+            "tags": [
+              "art galleries",
+              "bookshop cafes"
+            ]
+          },
+          "members": [
+            "u8",
+            "u9",
+            "u5"
+          ],
+          "score": 0.82,
+          "breakdown": {
+            "shared_interests": 0.431,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.622,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.537,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u8": 0.439,
+            "u9": 0.266,
+            "u5": 0.294
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        }
+      ]
+    },
+    "u9": {
+      "candidates": [
+        "u8",
+        "u6",
+        "u5"
+      ],
+      "recommendations": [
+        {
+          "venue": {
+            "id": "v6",
+            "name": "The Laugh Factory",
+            "category": "culture",
+            "tags": [
+              "comedy clubs",
+              "live music venues"
+            ]
+          },
+          "members": [
+            "u9",
+            "u6",
+            "u5"
+          ],
+          "score": 0.805,
+          "breakdown": {
+            "shared_interests": 0.245,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.667,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.559,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.05
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u9": 0.333,
+            "u6": 0.333,
+            "u5": 0.333
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v10",
+            "name": "Bodhi Yoga Studio",
+            "category": "wellness",
+            "tags": [
+              "yoga studios",
+              "meditation centers"
+            ]
+          },
+          "members": [
+            "u9",
+            "u8",
+            "u5"
+          ],
+          "score": 0.802,
+          "breakdown": {
+            "shared_interests": 0.431,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.622,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.537,
+            "venue_affinity": 0.075,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u9": 0.266,
+            "u8": 0.439,
+            "u5": 0.294
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v7",
+            "name": "Golden Hour Gallery",
+            "category": "culture",
+            "tags": [
+              "art galleries",
+              "bookshop cafes"
+            ]
+          },
+          "members": [
+            "u9",
+            "u8",
+            "u6",
+            "u5"
+          ],
+          "score": 0.796,
+          "breakdown": {
+            "shared_interests": 0.4,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.644,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.551,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u9": 0.217,
+            "u8": 0.293,
+            "u6": 0.197,
+            "u5": 0.293
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v8",
+            "name": "Taqueria El Sol",
+            "category": "dining",
+            "tags": [
+              "taco joints",
+              "brunch spots"
+            ]
+          },
+          "members": [
+            "u9",
+            "u8",
+            "u6",
+            "u5"
+          ],
+          "score": 0.779,
+          "breakdown": {
+            "shared_interests": 0.4,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.644,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.551,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u9": 0.246,
+            "u8": 0.272,
+            "u6": 0.182,
+            "u5": 0.3
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        },
+        {
+          "venue": {
+            "id": "v4",
+            "name": "Nonna's Trattoria",
+            "category": "dining",
+            "tags": [
+              "italian trattorias",
+              "brunch spots"
+            ]
+          },
+          "members": [
+            "u9",
+            "u6",
+            "u5"
+          ],
+          "score": 0.741,
+          "breakdown": {
+            "shared_interests": 0.245,
+            "availability_overlap": 1.0,
+            "past_coattendance": 0.667,
+            "social_cohesion": 0.667,
+            "personality_compatibility": 0.559,
+            "venue_affinity": 0.15,
+            "emergent_preference": 0.0
+          },
+          "suggested_time": "sun_3pm",
+          "member_affinities": {
+            "u9": 0.27,
+            "u6": 0.365,
+            "u5": 0.365
+          },
+          "adaptive_weights": {
+            "interests": 0.3,
+            "availability": 0.3,
+            "past": 0.15,
+            "cohesion": 0.05
+          },
+          "weight_context": "balanced"
+        }
+      ]
+    }
+  },
+  "propagations": {
+    "u0": {
+      "venue_id": "v1",
+      "venue_name": "Blue Note Jazz Club",
+      "waves": [
+        [
+          "u0"
+        ],
+        [
+          "u1",
+          "u5",
+          "u2",
+          "u3"
+        ],
+        [
+          "u9",
+          "u7",
+          "u4",
+          "u8",
+          "u6"
+        ],
+        []
+      ],
+      "events": [
+        {
+          "wave": 0,
+          "user_id": "u0",
+          "action": "INTERESTED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u1",
+          "action": "GOING",
+          "social_proof_count": 2,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u5",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 1,
+          "user_id": "u2",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u3",
+          "action": "GOING",
+          "social_proof_count": 10,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u9",
+          "action": "INTERESTED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 2,
+          "user_id": "u7",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u3"
+        },
+        {
+          "wave": 2,
+          "user_id": "u4",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u8",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 2,
+          "user_id": "u6",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u5"
+        }
+      ]
+    },
+    "u1": {
+      "venue_id": "v1",
+      "venue_name": "Blue Note Jazz Club",
+      "waves": [
+        [
+          "u1"
+        ],
+        [
+          "u0",
+          "u5",
+          "u3",
+          "u4",
+          "u8",
+          "u6"
+        ],
+        [
+          "u2",
+          "u9",
+          "u7"
+        ],
+        []
+      ],
+      "events": [
+        {
+          "wave": 0,
+          "user_id": "u1",
+          "action": "INTERESTED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u0",
+          "action": "GOING",
+          "social_proof_count": 2,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 1,
+          "user_id": "u5",
+          "action": "INVITED",
+          "social_proof_count": 2,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 1,
+          "user_id": "u3",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u4",
+          "action": "GOING",
+          "social_proof_count": 7,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u8",
+          "action": "INVITED",
+          "social_proof_count": 3,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 1,
+          "user_id": "u6",
+          "action": "INVITED",
+          "social_proof_count": 3,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 2,
+          "user_id": "u2",
+          "action": "GOING",
+          "social_proof_count": 10,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u9",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u6"
+        },
+        {
+          "wave": 2,
+          "user_id": "u7",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u3"
+        }
+      ]
+    },
+    "u2": {
+      "venue_id": "v11",
+      "venue_name": "Founders House Co-work",
+      "waves": [
+        [
+          "u2"
+        ],
+        [
+          "u0",
+          "u1",
+          "u5",
+          "u3"
+        ],
+        [
+          "u7",
+          "u4",
+          "u8",
+          "u6"
+        ],
+        [
+          "u9"
+        ],
+        []
+      ],
+      "events": [
+        {
+          "wave": 0,
+          "user_id": "u2",
+          "action": "INTERESTED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u0",
+          "action": "GOING",
+          "social_proof_count": 2,
+          "triggered_by": "u2"
+        },
+        {
+          "wave": 1,
+          "user_id": "u1",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u5",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 1,
+          "user_id": "u3",
+          "action": "GOING",
+          "social_proof_count": 10,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u7",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u3"
+        },
+        {
+          "wave": 2,
+          "user_id": "u4",
+          "action": "GOING",
+          "social_proof_count": 8,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u8",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 2,
+          "user_id": "u6",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 3,
+          "user_id": "u9",
+          "action": "GOING",
+          "social_proof_count": 8,
+          "triggered_by": "u6"
+        }
+      ]
+    },
+    "u3": {
+      "venue_id": "v1",
+      "venue_name": "Blue Note Jazz Club",
+      "waves": [
+        [
+          "u3"
+        ],
+        [
+          "u0",
+          "u1",
+          "u5",
+          "u2",
+          "u4"
+        ],
+        [
+          "u9",
+          "u7",
+          "u8",
+          "u6"
+        ],
+        []
+      ],
+      "events": [
+        {
+          "wave": 0,
+          "user_id": "u3",
+          "action": "INTERESTED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u0",
+          "action": "GOING",
+          "social_proof_count": 2,
+          "triggered_by": "u3"
+        },
+        {
+          "wave": 1,
+          "user_id": "u1",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u5",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 1,
+          "user_id": "u2",
+          "action": "GOING",
+          "social_proof_count": 10,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u4",
+          "action": "GOING",
+          "social_proof_count": 8,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u9",
+          "action": "INTERESTED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 2,
+          "user_id": "u7",
+          "action": "INVITED",
+          "social_proof_count": 2,
+          "triggered_by": "u3"
+        },
+        {
+          "wave": 2,
+          "user_id": "u8",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 2,
+          "user_id": "u6",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u5"
+        }
+      ]
+    },
+    "u4": {
+      "venue_id": "v10",
+      "venue_name": "Bodhi Yoga Studio",
+      "waves": [
+        [
+          "u4"
+        ],
+        [
+          "u0",
+          "u1",
+          "u5",
+          "u2",
+          "u3",
+          "u6"
+        ],
+        [
+          "u9",
+          "u7",
+          "u8"
+        ],
+        []
+      ],
+      "events": [
+        {
+          "wave": 0,
+          "user_id": "u4",
+          "action": "INTERESTED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u0",
+          "action": "GOING",
+          "social_proof_count": 2,
+          "triggered_by": "u4"
+        },
+        {
+          "wave": 1,
+          "user_id": "u1",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u5",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 1,
+          "user_id": "u2",
+          "action": "GOING",
+          "social_proof_count": 8,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u3",
+          "action": "GOING",
+          "social_proof_count": 12,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u6",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 2,
+          "user_id": "u9",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u6"
+        },
+        {
+          "wave": 2,
+          "user_id": "u7",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u3"
+        },
+        {
+          "wave": 2,
+          "user_id": "u8",
+          "action": "GOING",
+          "social_proof_count": 8,
+          "triggered_by": "u5"
+        }
+      ]
+    },
+    "u5": {
+      "venue_id": "v7",
+      "venue_name": "Golden Hour Gallery",
+      "waves": [
+        [
+          "u5"
+        ],
+        [
+          "u0",
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u8"
+        ],
+        [
+          "u9",
+          "u6"
+        ],
+        [
+          "u7"
+        ],
+        []
+      ],
+      "events": [
+        {
+          "wave": 0,
+          "user_id": "u5",
+          "action": "INTERESTED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u0",
+          "action": "INVITED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u1",
+          "action": "GOING",
+          "social_proof_count": 5,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u2",
+          "action": "GOING",
+          "social_proof_count": 7,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u3",
+          "action": "GOING",
+          "social_proof_count": 11,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u4",
+          "action": "GOING",
+          "social_proof_count": 5,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u8",
+          "action": "INVITED",
+          "social_proof_count": 2,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 2,
+          "user_id": "u9",
+          "action": "INTERESTED",
+          "social_proof_count": 3,
+          "triggered_by": "u8"
+        },
+        {
+          "wave": 2,
+          "user_id": "u6",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 3,
+          "user_id": "u7",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u3"
+        }
+      ]
+    },
+    "u6": {
+      "venue_id": "v4",
+      "venue_name": "Nonna's Trattoria",
+      "waves": [
+        [
+          "u6"
+        ],
+        [
+          "u1",
+          "u5"
+        ],
+        [
+          "u0",
+          "u2",
+          "u3",
+          "u9",
+          "u7",
+          "u4",
+          "u8"
+        ],
+        []
+      ],
+      "events": [
+        {
+          "wave": 0,
+          "user_id": "u6",
+          "action": "INTERESTED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u1",
+          "action": "INVITED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u5",
+          "action": "GOING",
+          "social_proof_count": 5,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 2,
+          "user_id": "u0",
+          "action": "INVITED",
+          "social_proof_count": 3,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 2,
+          "user_id": "u2",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u3",
+          "action": "GOING",
+          "social_proof_count": 10,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u9",
+          "action": "INVITED",
+          "social_proof_count": 2,
+          "triggered_by": "u6"
+        },
+        {
+          "wave": 2,
+          "user_id": "u7",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u3"
+        },
+        {
+          "wave": 2,
+          "user_id": "u4",
+          "action": "GOING",
+          "social_proof_count": 7,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u8",
+          "action": "GOING",
+          "social_proof_count": 7,
+          "triggered_by": "u5"
+        }
+      ]
+    },
+    "u7": {
+      "venue_id": "v9",
+      "venue_name": "Summit Climbing Gym",
+      "waves": [
+        [
+          "u7"
+        ],
+        [
+          "u0",
+          "u1",
+          "u2",
+          "u3"
+        ],
+        [
+          "u5",
+          "u4",
+          "u8",
+          "u6"
+        ],
+        [
+          "u9"
+        ],
+        []
+      ],
+      "events": [
+        {
+          "wave": 0,
+          "user_id": "u7",
+          "action": "INTERESTED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u0",
+          "action": "INVITED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u1",
+          "action": "INVITED",
+          "social_proof_count": 3,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u2",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 1,
+          "user_id": "u3",
+          "action": "GOING",
+          "social_proof_count": 12,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u5",
+          "action": "GOING",
+          "social_proof_count": 3,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 2,
+          "user_id": "u4",
+          "action": "GOING",
+          "social_proof_count": 7,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u8",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 2,
+          "user_id": "u6",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 3,
+          "user_id": "u9",
+          "action": "GOING",
+          "social_proof_count": 8,
+          "triggered_by": "u6"
+        }
+      ]
+    },
+    "u8": {
+      "venue_id": "v10",
+      "venue_name": "Bodhi Yoga Studio",
+      "waves": [
+        [
+          "u8"
+        ],
+        [
+          "u1",
+          "u5"
+        ],
+        [
+          "u0",
+          "u2",
+          "u3",
+          "u9",
+          "u7",
+          "u4",
+          "u6"
+        ],
+        []
+      ],
+      "events": [
+        {
+          "wave": 0,
+          "user_id": "u8",
+          "action": "INTERESTED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u1",
+          "action": "INVITED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u5",
+          "action": "GOING",
+          "social_proof_count": 5,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 2,
+          "user_id": "u0",
+          "action": "INVITED",
+          "social_proof_count": 3,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 2,
+          "user_id": "u2",
+          "action": "GOING",
+          "social_proof_count": 6,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u3",
+          "action": "GOING",
+          "social_proof_count": 10,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u9",
+          "action": "INVITED",
+          "social_proof_count": 2,
+          "triggered_by": "u8"
+        },
+        {
+          "wave": 2,
+          "user_id": "u7",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u3"
+        },
+        {
+          "wave": 2,
+          "user_id": "u4",
+          "action": "GOING",
+          "social_proof_count": 7,
+          "triggered_by": "u0"
+        },
+        {
+          "wave": 2,
+          "user_id": "u6",
+          "action": "GOING",
+          "social_proof_count": 7,
+          "triggered_by": "u5"
+        }
+      ]
+    },
+    "u9": {
+      "venue_id": "v6",
+      "venue_name": "The Laugh Factory",
+      "waves": [
+        [
+          "u9"
+        ],
+        [
+          "u5",
+          "u8",
+          "u6"
+        ],
+        [
+          "u1",
+          "u2",
+          "u3",
+          "u4"
+        ],
+        [
+          "u0",
+          "u7"
+        ],
+        []
+      ],
+      "events": [
+        {
+          "wave": 0,
+          "user_id": "u9",
+          "action": "INTERESTED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u5",
+          "action": "INVITED",
+          "social_proof_count": 0,
+          "triggered_by": null
+        },
+        {
+          "wave": 1,
+          "user_id": "u8",
+          "action": "GOING",
+          "social_proof_count": 5,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 1,
+          "user_id": "u6",
+          "action": "GOING",
+          "social_proof_count": 5,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 2,
+          "user_id": "u1",
+          "action": "GOING",
+          "social_proof_count": 3,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 2,
+          "user_id": "u2",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 2,
+          "user_id": "u3",
+          "action": "GOING",
+          "social_proof_count": 8,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 2,
+          "user_id": "u4",
+          "action": "INVITED",
+          "social_proof_count": 3,
+          "triggered_by": "u5"
+        },
+        {
+          "wave": 3,
+          "user_id": "u0",
+          "action": "GOING",
+          "social_proof_count": 15,
+          "triggered_by": "u1"
+        },
+        {
+          "wave": 3,
+          "user_id": "u7",
+          "action": "GOING",
+          "social_proof_count": 4,
+          "triggered_by": "u3"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>luna — group formation simulation</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #09090c;
+    --bg-elevated: #111116;
+    --bg-card: #16161d;
+    --bg-hover: #1c1c25;
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-medium: rgba(255, 255, 255, 0.1);
+    --text-primary: #e8e6ef;
+    --text-secondary: #8a879a;
+    --text-tertiary: #5c596b;
+    --accent: #9b8ec4;
+    --accent-dim: rgba(155, 142, 196, 0.15);
+    --accent-glow: rgba(155, 142, 196, 0.3);
+    --teal: #6ec6b8;
+    --teal-dim: rgba(110, 198, 184, 0.15);
+    --gold: #c9b87a;
+    --gold-dim: rgba(201, 184, 122, 0.15);
+    --blue: #7aaccf;
+    --blue-dim: rgba(122, 172, 207, 0.15);
+    --peach: #cf9a7a;
+    --peach-dim: rgba(207, 154, 122, 0.15);
+    --green: #7acf8e;
+    --green-dim: rgba(122, 207, 142, 0.15);
+    --rose: #cf7a9a;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    overflow: hidden;
+    height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 260px 1fr 288px;
+    grid-template-rows: 56px 1fr;
+    height: 100vh;
+  }
+
+  /* ── Header ─────────────────────────────── */
+  header {
+    grid-column: 1 / -1;
+    background: var(--bg-elevated);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border-subtle);
+    gap: 16px;
+  }
+
+  .logo img {
+    height: 28px;
+    display: block;
+  }
+
+  .logo-sub {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-tertiary);
+    letter-spacing: 0.3px;
+  }
+
+  header .controls {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .btn {
+    padding: 7px 14px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.2px;
+  }
+  .btn:hover {
+    background: var(--bg-hover);
+    border-color: var(--border-medium);
+    color: var(--text-primary);
+  }
+  .btn.active {
+    background: var(--accent-dim);
+    border-color: rgba(155, 142, 196, 0.3);
+    color: var(--accent);
+  }
+  .btn.primary {
+    background: var(--accent);
+    border: 1px solid transparent;
+    color: #09090c;
+    font-weight: 600;
+  }
+  .btn.primary:hover {
+    background: #b0a4d4;
+  }
+
+  /* ── Left Panel ─────────────────────────── */
+  .left-panel {
+    background: var(--bg-elevated);
+    border-right: 1px solid var(--border-subtle);
+    overflow-y: auto;
+    padding: 16px 12px;
+  }
+  .panel-heading {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    margin-bottom: 12px;
+    padding: 0 8px;
+  }
+  .user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .user-item {
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+  .user-item:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+  }
+  .user-item.selected {
+    background: var(--accent-dim);
+    color: var(--accent);
+  }
+  .user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    flex-shrink: 0;
+    transition: all 0.15s ease;
+  }
+  .user-item.selected .user-avatar {
+    border-color: rgba(155, 142, 196, 0.4);
+    background: var(--accent-dim);
+    color: var(--accent);
+  }
+  .user-name {
+    font-weight: 500;
+  }
+  .user-meta {
+    font-size: 10px;
+    color: var(--text-tertiary);
+    margin-top: 1px;
+    font-weight: 400;
+  }
+
+  /* ── Graph Container ────────────────────── */
+  #graph-container {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-primary);
+  }
+
+  /* Subtle grid texture */
+  #graph-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.02) 1px, transparent 0);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #graph-container svg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Phase indicator overlay */
+  .phase-indicator {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(17, 17, 22, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    z-index: 10;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    text-align: center;
+    letter-spacing: -0.2px;
+  }
+  .phase-indicator .sub {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-tertiary);
+    margin-top: 3px;
+    letter-spacing: 0;
+  }
+
+  /* Legend */
+  .graph-legend {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    display: flex;
+    gap: 14px;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  .legend-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+
+  /* ── Right Panel ────────────────────────── */
+  .right-panel {
+    background: var(--bg-elevated);
+    border-left: 1px solid var(--border-subtle);
+    overflow-y: auto;
+    padding: 16px;
+  }
+  .right-panel .panel-heading {
+    margin-top: 20px;
+    padding: 0;
+  }
+  .right-panel .panel-heading:first-child { margin-top: 0; }
+
+  .profile-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 14px;
+    margin-top: 8px;
+  }
+  .profile-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+  .profile-detail {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+  .profile-detail span {
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 500;
+    margin: 2px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-tertiary);
+    border: 1px solid var(--border-subtle);
+    letter-spacing: 0.2px;
+  }
+  .tag.interest {
+    background: var(--accent-dim);
+    color: var(--accent);
+    border-color: rgba(155, 142, 196, 0.15);
+  }
+  .tag.time {
+    background: var(--gold-dim);
+    color: var(--gold);
+    border-color: rgba(201, 184, 122, 0.15);
+  }
+
+  .rec-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    margin-top: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .rec-card:hover {
+    border-color: var(--border-medium);
+    background: var(--bg-hover);
+  }
+  .rec-card.active {
+    border-color: rgba(155, 142, 196, 0.3);
+    background: rgba(155, 142, 196, 0.06);
+  }
+  .rec-venue {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
+  }
+  .rec-group {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-bottom: 8px;
+  }
+  .rec-score-bar {
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+  .rec-score-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--teal));
+    transition: width 0.4s ease;
+  }
+  .rec-score-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-tertiary);
+  }
+
+  .score-breakdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .score-item {
+    font-size: 10px;
+    color: var(--text-tertiary);
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
+  }
+  .score-item .val {
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 10px;
+  }
+
+  /* Wave controls */
+  .wave-controls {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+  .wave-btn {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+    color: var(--text-tertiary);
+    transition: all 0.15s ease;
+  }
+  .wave-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+  }
+  .wave-btn.active {
+    background: var(--green-dim);
+    border-color: rgba(122, 207, 142, 0.25);
+    color: var(--green);
+  }
+
+  .event-log {
+    max-height: 240px;
+    overflow-y: auto;
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--text-tertiary);
+    margin-top: 8px;
+  }
+  .event-log .event {
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .event-log .event:last-child { border-bottom: none; }
+  .event-log .name {
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+  .event-log .action-interested { color: var(--blue); }
+  .event-log .action-invited { color: var(--peach); }
+  .event-log .action-going { color: var(--green); }
+  .event-log .action-recommended { color: var(--accent); }
+
+  /* Tooltip */
+  .tooltip {
+    position: absolute;
+    background: rgba(17, 17, 22, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 100;
+    max-width: 240px;
+  }
+  .tooltip .tt-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  .tooltip .tt-detail {
+    color: var(--text-tertiary);
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .tooltip .tt-detail strong {
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  .tt-personality {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .tt-trait {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: var(--text-tertiary);
+  }
+  .tt-trait-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .tt-trait-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.08); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.12); }
+
+  /* Empty state */
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    color: var(--text-tertiary);
+    font-size: 12px;
+    gap: 6px;
+  }
+  .empty-state .empty-icon {
+    font-size: 20px;
+    opacity: 0.4;
+  }
+
+  /* Personality bars in profile */
+  .personality-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .personality-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    color: var(--text-tertiary);
+  }
+  .personality-label {
+    width: 72px;
+    flex-shrink: 0;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+  }
+  .personality-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .personality-fill {
+    height: 100%;
+    border-radius: 2px;
+  }
+  .personality-val {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-secondary);
+    width: 28px;
+    text-align: right;
+  }
+
+  /* Adaptive weights badge */
+  .weight-context {
+    font-size: 10px;
+    color: var(--teal);
+    background: var(--teal-dim);
+    border: 1px solid rgba(110, 198, 184, 0.15);
+    border-radius: 20px;
+    padding: 3px 10px;
+    margin-top: 8px;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+  }
+
+  /* Member affinities */
+  .affinity-section {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .affinity-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: var(--text-tertiary);
+    padding: 2px 0;
+  }
+  .affinity-name {
+    width: 60px;
+    flex-shrink: 0;
+    font-weight: 500;
+  }
+  .affinity-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .affinity-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--teal));
+  }
+  .affinity-val {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-secondary);
+    width: 32px;
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div class="logo"><img src="luna-logo.png" alt="luna"></div>
+    <span class="logo-sub">group formation simulation</span>
+    <div class="controls">
+      <button class="btn active" id="btn-group" onclick="setMode('group')">group selection</button>
+      <button class="btn" id="btn-propagation" onclick="setMode('propagation')">propagation</button>
+      <button class="btn primary" id="btn-animate" onclick="animate()">animate</button>
+    </div>
+  </header>
+
+  <div class="left-panel">
+    <div class="panel-heading">network</div>
+    <div class="user-list" id="user-list"></div>
+  </div>
+
+  <div id="graph-container">
+    <div class="phase-indicator" id="phase-indicator">select a user to begin</div>
+    <div class="graph-legend" id="graph-legend"></div>
+    <svg id="graph-svg"></svg>
+  </div>
+
+  <div class="right-panel" id="right-panel">
+    <div class="empty-state">
+      <div class="empty-icon">&#9673;</div>
+      <div>select a user from the network</div>
+    </div>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+// ── State ──────────────────────────────────────────────────
+let DATA = null;
+let selectedUser = null;
+let selectedRec = 0;
+let mode = "group";
+let currentWave = -1;
+let animating = false;
+let simulation = null;
+let nodeElements = null;
+let linkElements = null;
+let labelElements = null;
+
+const COLORS = {
+  target:    "#9b8ec4",
+  friend:    "#6ec6b8",
+  fof:       "#4a9a8e",
+  selected:  "#c9b87a",
+  interested:"#7aaccf",
+  invited:   "#cf9a7a",
+  going:     "#7acf8e",
+  inactive:  "#2a2a35",
+  edgeNormal:"rgba(255,255,255,0.04)",
+  edgeActive:"rgba(155, 142, 196, 0.35)",
+};
+
+const ACTION_COLORS = {
+  RECOMMENDED: COLORS.target,
+  INTERESTED: COLORS.interested,
+  INVITED:    COLORS.invited,
+  GOING:      COLORS.going,
+};
+
+const LEGEND = {
+  group: [
+    { color: COLORS.target, label: "selected user" },
+    { color: COLORS.friend, label: "friends" },
+    { color: COLORS.fof, label: "candidates" },
+    { color: COLORS.selected, label: "group" },
+  ],
+  propagation: [
+    { color: COLORS.target, label: "seed" },
+    { color: COLORS.interested, label: "interested" },
+    { color: COLORS.invited, label: "invited" },
+    { color: COLORS.going, label: "going" },
+  ]
+};
+
+function updateLegend() {
+  const items = LEGEND[mode] || LEGEND.group;
+  document.getElementById("graph-legend").innerHTML = items.map(i =>
+    `<div class="legend-item"><div class="legend-dot" style="background:${i.color}"></div>${i.label}</div>`
+  ).join("");
+}
+
+// ── Load Data ──────────────────────────────────────────────
+fetch("graph_data.json")
+  .then(r => r.json())
+  .then(data => {
+    DATA = data;
+    initGraph();
+    buildUserList();
+    updateLegend();
+    selectUser("u0");
+  });
+
+// ── Graph Setup ────────────────────────────────────────────
+function initGraph() {
+  const container = document.getElementById("graph-container");
+  const width = container.clientWidth;
+  const height = container.clientHeight;
+  const svg = d3.select("#graph-svg")
+    .attr("viewBox", [0, 0, width, height]);
+
+  // Defs for glow effect
+  const defs = svg.append("defs");
+  const filter = defs.append("filter").attr("id", "glow").attr("x", "-50%").attr("y", "-50%").attr("width", "200%").attr("height", "200%");
+  filter.append("feGaussianBlur").attr("stdDeviation", "6").attr("result", "coloredBlur");
+  const merge = filter.append("feMerge");
+  merge.append("feMergeNode").attr("in", "coloredBlur");
+  merge.append("feMergeNode").attr("in", "SourceGraphic");
+
+  // Subtle glow for accent
+  const filterAccent = defs.append("filter").attr("id", "glow-accent").attr("x", "-50%").attr("y", "-50%").attr("width", "200%").attr("height", "200%");
+  filterAccent.append("feGaussianBlur").attr("stdDeviation", "10").attr("result", "coloredBlur");
+  const mergeAccent = filterAccent.append("feMerge");
+  mergeAccent.append("feMergeNode").attr("in", "coloredBlur");
+  mergeAccent.append("feMergeNode").attr("in", "SourceGraphic");
+
+  const g = svg.append("g").attr("class", "graph-group");
+
+  // Zoom
+  svg.call(d3.zoom()
+    .scaleExtent([0.3, 4])
+    .on("zoom", e => g.attr("transform", e.transform)));
+
+  // Links
+  linkElements = g.append("g").attr("class", "links")
+    .selectAll("line")
+    .data(DATA.edges)
+    .join("line")
+    .attr("stroke", COLORS.edgeNormal)
+    .attr("stroke-width", 1);
+
+  // Nodes
+  nodeElements = g.append("g").attr("class", "nodes")
+    .selectAll("circle")
+    .data(DATA.nodes)
+    .join("circle")
+    .attr("r", 12)
+    .attr("fill", COLORS.inactive)
+    .attr("stroke", "rgba(255,255,255,0.06)")
+    .attr("stroke-width", 1.5)
+    .attr("cursor", "pointer")
+    .on("click", (e, d) => selectUser(d.id))
+    .on("mouseenter", showTooltip)
+    .on("mouseleave", hideTooltip);
+
+  // Labels
+  labelElements = g.append("g").attr("class", "labels")
+    .selectAll("text")
+    .data(DATA.nodes)
+    .join("text")
+    .text(d => d.name.toLowerCase())
+    .attr("font-family", "var(--font-body)")
+    .attr("font-size", 10)
+    .attr("font-weight", 500)
+    .attr("fill", "#444")
+    .attr("text-anchor", "middle")
+    .attr("dy", -20)
+    .attr("pointer-events", "none");
+
+  // Force simulation
+  simulation = d3.forceSimulation(DATA.nodes)
+    .force("link", d3.forceLink(DATA.edges).id(d => d.id).distance(110))
+    .force("charge", d3.forceManyBody().strength(-280))
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("collision", d3.forceCollide(28))
+    .on("tick", () => {
+      linkElements
+        .attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+      nodeElements
+        .attr("cx", d => d.x).attr("cy", d => d.y);
+      labelElements
+        .attr("x", d => d.x).attr("y", d => d.y);
+    });
+
+  // Drag
+  nodeElements.call(d3.drag()
+    .on("start", (e, d) => { if (!e.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+    .on("drag", (e, d) => { d.fx = e.x; d.fy = e.y; })
+    .on("end", (e, d) => { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
+  );
+}
+
+// ── User List ──────────────────────────────────────────────
+function buildUserList() {
+  const list = document.getElementById("user-list");
+  list.innerHTML = DATA.nodes.map(n => `
+    <div class="user-item" data-id="${n.id}" onclick="selectUser('${n.id}')">
+      <div class="user-avatar">${n.name.charAt(0)}</div>
+      <div>
+        <div class="user-name">${n.name.toLowerCase()}</div>
+        <div class="user-meta">${n.friends.length} friends · ${n.interests.length} interests</div>
+      </div>
+    </div>
+  `).join("");
+}
+
+// ── Select User ────────────────────────────────────────────
+function selectUser(uid) {
+  selectedUser = uid;
+  selectedRec = 0;
+  currentWave = -1;
+
+  document.querySelectorAll(".user-item").forEach(el => {
+    el.classList.toggle("selected", el.dataset.id === uid);
+  });
+
+  updateRightPanel();
+  updateGraph();
+}
+
+// ── Mode ───────────────────────────────────────────────────
+function setMode(m) {
+  mode = m;
+  currentWave = -1;
+  document.getElementById("btn-group").classList.toggle("active", m === "group");
+  document.getElementById("btn-propagation").classList.toggle("active", m === "propagation");
+  updateLegend();
+  updateRightPanel();
+  updateGraph();
+}
+
+// ── Update Graph Visuals ───────────────────────────────────
+function updateGraph() {
+  if (!selectedUser || !DATA) return;
+
+  const ud = DATA.user_data[selectedUser];
+  const user = DATA.nodes.find(n => n.id === selectedUser);
+  const candidates = new Set(ud.candidates);
+
+  if (mode === "group") {
+    const rec = ud.recommendations[selectedRec];
+    const groupSet = rec ? new Set(rec.members) : new Set();
+    const affinities = rec ? (rec.member_affinities || {}) : {};
+
+    setPhase(
+      rec ? rec.venue.name.toLowerCase() : "no recommendations",
+      rec ? `group of ${rec.members.length} · ${rec.suggested_time} · score ${rec.score}` : ""
+    );
+
+    nodeElements.transition().duration(400).ease(d3.easeCubicOut)
+      .attr("fill", d => {
+        if (d.id === selectedUser) return COLORS.target;
+        if (groupSet.has(d.id)) return COLORS.selected;
+        if (user.friends.includes(d.id)) return COLORS.friend;
+        if (candidates.has(d.id)) return COLORS.fof;
+        return COLORS.inactive;
+      })
+      .attr("r", d => {
+        if (d.id === selectedUser) return 20;
+        if (groupSet.has(d.id)) {
+          const aff = affinities[d.id] || 0.5;
+          return 12 + aff * 8;  // 12-20 based on affinity
+        }
+        if (user.friends.includes(d.id)) return 11;
+        if (candidates.has(d.id)) return 10;
+        return 6;
+      })
+      .attr("stroke", d => {
+        if (d.id === selectedUser) return "rgba(155, 142, 196, 0.4)";
+        if (groupSet.has(d.id)) return "rgba(201, 184, 122, 0.3)";
+        return "rgba(255,255,255,0.06)";
+      })
+      .attr("filter", d => (groupSet.has(d.id) || d.id === selectedUser) ? "url(#glow)" : null);
+
+    linkElements.transition().duration(400).ease(d3.easeCubicOut)
+      .attr("stroke", d => {
+        const s = typeof d.source === "object" ? d.source.id : d.source;
+        const t = typeof d.target === "object" ? d.target.id : d.target;
+        if (groupSet.has(s) && groupSet.has(t)) return COLORS.edgeActive;
+        if ((s === selectedUser && user.friends.includes(t)) || (t === selectedUser && user.friends.includes(s))) return "rgba(255,255,255,0.08)";
+        return COLORS.edgeNormal;
+      })
+      .attr("stroke-width", d => {
+        const s = typeof d.source === "object" ? d.source.id : d.source;
+        const t = typeof d.target === "object" ? d.target.id : d.target;
+        if (groupSet.has(s) && groupSet.has(t)) return 2;
+        return 0.5;
+      });
+
+    labelElements.transition().duration(400).ease(d3.easeCubicOut)
+      .attr("fill", d => {
+        if (d.id === selectedUser) return COLORS.target;
+        if (groupSet.has(d.id)) return COLORS.selected;
+        if (candidates.has(d.id)) return "#666";
+        return "#333";
+      })
+      .attr("font-weight", d => (groupSet.has(d.id) || d.id === selectedUser) ? "700" : "400");
+
+  } else {
+    const prop = DATA.propagations[selectedUser];
+    const engagedMap = {};
+
+    prop.events.forEach(ev => {
+      if (ev.wave <= currentWave) {
+        engagedMap[ev.user_id] = ev.action;
+      }
+    });
+
+    const totalEngaged = Object.keys(engagedMap).length;
+    const waveLabel = currentWave < 0 ? "ready" : `wave ${currentWave}`;
+    setPhase(
+      `${prop.venue_name.toLowerCase()} — ${waveLabel}`,
+      `${totalEngaged} users engaged`
+    );
+
+    nodeElements.transition().duration(400).ease(d3.easeCubicOut)
+      .attr("fill", d => {
+        if (d.id === selectedUser && currentWave >= 0) return COLORS.target;
+        if (engagedMap[d.id]) return ACTION_COLORS[engagedMap[d.id]] || COLORS.inactive;
+        return COLORS.inactive;
+      })
+      .attr("r", d => {
+        if (d.id === selectedUser) return 20;
+        if (engagedMap[d.id]) return 14;
+        return 6;
+      })
+      .attr("stroke", d => {
+        if (engagedMap[d.id]) return "rgba(255,255,255,0.1)";
+        return "rgba(255,255,255,0.06)";
+      })
+      .attr("filter", d => engagedMap[d.id] ? "url(#glow)" : null);
+
+    linkElements.transition().duration(400).ease(d3.easeCubicOut)
+      .attr("stroke", d => {
+        const s = typeof d.source === "object" ? d.source.id : d.source;
+        const t = typeof d.target === "object" ? d.target.id : d.target;
+        if (engagedMap[s] && engagedMap[t]) return COLORS.edgeActive;
+        return COLORS.edgeNormal;
+      })
+      .attr("stroke-width", d => {
+        const s = typeof d.source === "object" ? d.source.id : d.source;
+        const t = typeof d.target === "object" ? d.target.id : d.target;
+        return (engagedMap[s] && engagedMap[t]) ? 1.5 : 0.5;
+      });
+
+    labelElements.transition().duration(400).ease(d3.easeCubicOut)
+      .attr("fill", d => engagedMap[d.id] ? "#aaa" : "#333")
+      .attr("font-weight", d => engagedMap[d.id] ? "600" : "400");
+  }
+}
+
+// ── Right Panel ────────────────────────────────────────────
+function updateRightPanel() {
+  const panel = document.getElementById("right-panel");
+  if (!selectedUser) {
+    panel.innerHTML = `<div class="empty-state"><div class="empty-icon">&#9673;</div><div>select a user from the network</div></div>`;
+    return;
+  }
+
+  const user = DATA.nodes.find(n => n.id === selectedUser);
+  const ud = DATA.user_data[selectedUser];
+
+  let html = `
+    <div class="panel-heading">profile</div>
+    <div class="profile-card">
+      <div class="profile-name">${user.name.toLowerCase()}</div>
+      <div class="profile-detail">initiator score <span>${(user.initiator_score * 100).toFixed(0)}%</span></div>
+      <div class="profile-detail">friends <span>${user.friends.length}</span> · candidates <span>${ud.candidates.length}</span></div>
+      <div style="margin-top:10px">
+        ${user.interests.map(i => `<span class="tag interest">${i}</span>`).join("")}
+      </div>
+      <div style="margin-top:6px">
+        ${user.availability.map(t => `<span class="tag time">${t}</span>`).join("")}
+      </div>
+      ${user.personality ? `
+      <div class="personality-bars">
+        <div class="personality-row">
+          <span class="personality-label">openness</span>
+          <div class="personality-bar"><div class="personality-fill" style="width:${(user.personality.openness||0.5)*100}%;background:var(--blue)"></div></div>
+          <span class="personality-val">${((user.personality.openness||0.5)*100).toFixed(0)}%</span>
+        </div>
+        <div class="personality-row">
+          <span class="personality-label">agreeable</span>
+          <div class="personality-bar"><div class="personality-fill" style="width:${(user.personality.agreeableness||0.5)*100}%;background:var(--green)"></div></div>
+          <span class="personality-val">${((user.personality.agreeableness||0.5)*100).toFixed(0)}%</span>
+        </div>
+        <div class="personality-row">
+          <span class="personality-label">energy</span>
+          <div class="personality-bar"><div class="personality-fill" style="width:${(user.personality.energy||0.5)*100}%;background:var(--peach)"></div></div>
+          <span class="personality-val">${((user.personality.energy||0.5)*100).toFixed(0)}%</span>
+        </div>
+      </div>
+      ` : ""}
+    </div>
+  `;
+
+  if (mode === "group") {
+    html += `<div class="panel-heading">recommendations</div>`;
+    ud.recommendations.forEach((rec, i) => {
+      const names = rec.members.map(id => {
+        const n = DATA.nodes.find(n => n.id === id);
+        return n ? n.name.toLowerCase() : id;
+      });
+      const bd = rec.breakdown;
+      html += `
+        <div class="rec-card ${i === selectedRec ? 'active' : ''}" onclick="selectRec(${i})">
+          <div class="rec-venue">${rec.venue.name.toLowerCase()}</div>
+          <div class="rec-group">${names.join(", ")} · ${rec.suggested_time}</div>
+          <div class="rec-score-bar"><div class="rec-score-fill" style="width:${rec.score * 100}%"></div></div>
+          <div class="rec-score-label">${rec.score}</div>
+          ${i === selectedRec ? `
+            <div class="score-breakdown">
+              <div class="score-item"><span>interests</span><span class="val">${bd.shared_interests}</span></div>
+              <div class="score-item"><span>availability</span><span class="val">${bd.availability_overlap}</span></div>
+              <div class="score-item"><span>past success</span><span class="val">${bd.past_coattendance}</span></div>
+              <div class="score-item"><span>cohesion</span><span class="val">${bd.social_cohesion}</span></div>
+              <div class="score-item"><span>personality</span><span class="val">${bd.personality_compatibility || 0}</span></div>
+              <div class="score-item"><span>venue fit</span><span class="val">${bd.venue_affinity}</span></div>
+              <div class="score-item"><span>emergent</span><span class="val">${bd.emergent_preference || 0}</span></div>
+            </div>
+            ${rec.weight_context ? `<div class="weight-context">${rec.weight_context}</div>` : ""}
+            ${rec.member_affinities && Object.keys(rec.member_affinities).length > 0 ? `
+            <div class="affinity-section">
+              <div style="font-size:10px;color:var(--text-tertiary);margin-bottom:6px;font-weight:500;letter-spacing:0.3px">MEMBER AFFINITY</div>
+              ${rec.members.map(mid => {
+                const mname = DATA.nodes.find(n => n.id === mid)?.name?.toLowerCase() || mid;
+                const aff = rec.member_affinities[mid] || 0;
+                return `<div class="affinity-row">
+                  <span class="affinity-name">${mname}</span>
+                  <div class="affinity-bar"><div class="affinity-fill" style="width:${aff * 100}%"></div></div>
+                  <span class="affinity-val">${aff}</span>
+                </div>`;
+              }).join("")}
+            </div>` : ""}
+          ` : ""}
+        </div>
+      `;
+    });
+  } else {
+    const prop = DATA.propagations[selectedUser];
+    html += `<div class="panel-heading">propagation waves</div>`;
+    html += `<div class="wave-controls">`;
+    prop.waves.forEach((w, i) => {
+      html += `<button class="wave-btn ${i === currentWave ? 'active' : ''}" onclick="selectWave(${i})">wave ${i} (${w.length})</button>`;
+    });
+    html += `</div>`;
+
+    html += `<div class="panel-heading">event log</div><div class="event-log">`;
+    prop.events.filter(e => currentWave < 0 || e.wave <= currentWave).forEach(ev => {
+      const name = DATA.nodes.find(n => n.id === ev.user_id)?.name?.toLowerCase() || ev.user_id;
+      const trigger = ev.triggered_by ? (DATA.nodes.find(n => n.id === ev.triggered_by)?.name?.toLowerCase() || ev.triggered_by) : "organic";
+      html += `
+        <div class="event">
+          <span class="name">${name}</span>
+          <span class="action-${ev.action.toLowerCase()}">${ev.action.toLowerCase()}</span>
+          · proof: ${ev.social_proof_count} · via ${trigger}
+        </div>
+      `;
+    });
+    html += `</div>`;
+  }
+
+  panel.innerHTML = html;
+}
+
+function selectRec(i) {
+  selectedRec = i;
+  updateRightPanel();
+  updateGraph();
+}
+
+function selectWave(w) {
+  currentWave = w;
+  updateRightPanel();
+  updateGraph();
+}
+
+// ── Animate ────────────────────────────────────────────────
+async function animate() {
+  if (animating) return;
+  animating = true;
+  const btn = document.getElementById("btn-animate");
+  btn.textContent = "animating...";
+  btn.classList.remove("primary");
+  btn.style.opacity = "0.6";
+
+  if (mode === "group") {
+    const ud = DATA.user_data[selectedUser];
+    const rec = ud.recommendations[selectedRec];
+    if (!rec) { animating = false; return; }
+
+    const user = DATA.nodes.find(n => n.id === selectedUser);
+    const candidates = new Set(ud.candidates);
+    const groupSet = new Set(rec.members);
+
+    // Phase 1: Just the user
+    setPhase("identifying user", "scanning the network");
+    nodeElements.transition().duration(500).ease(d3.easeCubicOut)
+      .attr("fill", d => d.id === selectedUser ? COLORS.target : COLORS.inactive)
+      .attr("r", d => d.id === selectedUser ? 20 : 6)
+      .attr("filter", d => d.id === selectedUser ? "url(#glow-accent)" : null)
+      .attr("stroke", d => d.id === selectedUser ? "rgba(155, 142, 196, 0.4)" : "rgba(255,255,255,0.06)");
+    linkElements.transition().duration(500).attr("stroke", COLORS.edgeNormal).attr("stroke-width", 0.5);
+    labelElements.transition().duration(500).attr("fill", d => d.id === selectedUser ? COLORS.target : "#333");
+    await sleep(1200);
+
+    // Phase 2: Friends
+    setPhase("direct friends", "mapping social connections");
+    nodeElements.transition().duration(500).ease(d3.easeCubicOut)
+      .attr("fill", d => {
+        if (d.id === selectedUser) return COLORS.target;
+        if (user.friends.includes(d.id)) return COLORS.friend;
+        return COLORS.inactive;
+      })
+      .attr("r", d => {
+        if (d.id === selectedUser) return 20;
+        if (user.friends.includes(d.id)) return 12;
+        return 6;
+      });
+    await sleep(1200);
+
+    // Phase 3: FoFs
+    setPhase("candidate pool", "expanding to friends-of-friends");
+    nodeElements.transition().duration(500).ease(d3.easeCubicOut)
+      .attr("fill", d => {
+        if (d.id === selectedUser) return COLORS.target;
+        if (user.friends.includes(d.id)) return COLORS.friend;
+        if (candidates.has(d.id)) return COLORS.fof;
+        return COLORS.inactive;
+      })
+      .attr("r", d => {
+        if (d.id === selectedUser) return 20;
+        if (candidates.has(d.id)) return 10;
+        return 6;
+      });
+    await sleep(1200);
+
+    // Phase 4: Scoring
+    setPhase("scoring groups", "evaluating combinations");
+    await sleep(600);
+
+    for (let flash = 0; flash < 3; flash++) {
+      const fakeGroup = new Set([selectedUser, ...shuffle([...candidates]).slice(0, 3)]);
+      nodeElements.transition().duration(180).ease(d3.easeLinear)
+        .attr("fill", d => {
+          if (d.id === selectedUser) return COLORS.target;
+          if (fakeGroup.has(d.id)) return "rgba(155, 142, 196, 0.5)";
+          if (candidates.has(d.id)) return COLORS.fof;
+          return COLORS.inactive;
+        });
+      await sleep(300);
+    }
+
+    // Final
+    setPhase(rec.venue.name.toLowerCase(), `score ${rec.score} · ${rec.suggested_time}`);
+    nodeElements.transition().duration(600).ease(d3.easeCubicOut)
+      .attr("fill", d => {
+        if (d.id === selectedUser) return COLORS.target;
+        if (groupSet.has(d.id)) return COLORS.selected;
+        if (candidates.has(d.id)) return COLORS.fof;
+        return COLORS.inactive;
+      })
+      .attr("r", d => {
+        if (d.id === selectedUser) return 20;
+        if (groupSet.has(d.id)) return 16;
+        return 6;
+      })
+      .attr("stroke", d => {
+        if (d.id === selectedUser) return "rgba(155, 142, 196, 0.4)";
+        if (groupSet.has(d.id)) return "rgba(201, 184, 122, 0.3)";
+        return "rgba(255,255,255,0.06)";
+      })
+      .attr("filter", d => (groupSet.has(d.id) || d.id === selectedUser) ? "url(#glow)" : null);
+
+    linkElements.transition().duration(600).ease(d3.easeCubicOut)
+      .attr("stroke", d => {
+        const s = typeof d.source === "object" ? d.source.id : d.source;
+        const t = typeof d.target === "object" ? d.target.id : d.target;
+        if (groupSet.has(s) && groupSet.has(t)) return COLORS.edgeActive;
+        return COLORS.edgeNormal;
+      })
+      .attr("stroke-width", d => {
+        const s = typeof d.source === "object" ? d.source.id : d.source;
+        const t = typeof d.target === "object" ? d.target.id : d.target;
+        return (groupSet.has(s) && groupSet.has(t)) ? 2 : 0.5;
+      });
+
+    labelElements.transition().duration(600).ease(d3.easeCubicOut)
+      .attr("fill", d => {
+        if (d.id === selectedUser) return COLORS.target;
+        if (groupSet.has(d.id)) return COLORS.selected;
+        return "#333";
+      })
+      .attr("font-weight", d => (groupSet.has(d.id) || d.id === selectedUser) ? "700" : "400");
+
+  } else {
+    const prop = DATA.propagations[selectedUser];
+    for (let w = 0; w < prop.waves.length; w++) {
+      currentWave = w;
+      updateRightPanel();
+      updateGraph();
+      await sleep(1500);
+    }
+  }
+
+  animating = false;
+  btn.textContent = "animate";
+  btn.classList.add("primary");
+  btn.style.opacity = "1";
+}
+
+// ── Tooltip ────────────────────────────────────────────────
+function showTooltip(event, d) {
+  const tt = document.getElementById("tooltip");
+  const coattendance = Object.entries(d.past_coattendance)
+    .map(([uid, count]) => `${(DATA.nodes.find(n => n.id === uid)?.name || uid).toLowerCase()}: ${count}x`)
+    .slice(0, 4)
+    .join(", ");
+
+  const p = d.personality || {};
+  tt.innerHTML = `
+    <div class="tt-name">${d.name.toLowerCase()}</div>
+    <div class="tt-detail">
+      <strong>interests</strong> ${d.interests.join(", ")}<br>
+      <strong>available</strong> ${d.availability.join(", ")}<br>
+      <strong>friends</strong> ${d.friends.length}<br>
+      <strong>initiator</strong> ${(d.initiator_score * 100).toFixed(0)}%<br>
+      ${coattendance ? `<strong>co-attendance</strong> ${coattendance}` : ""}
+    </div>
+    <div class="tt-personality">
+      <div class="tt-trait"><span style="width:62px">openness</span><div class="tt-trait-bar"><div class="tt-trait-fill" style="width:${(p.openness||0.5)*100}%;background:var(--blue)"></div></div></div>
+      <div class="tt-trait"><span style="width:62px">agreeable</span><div class="tt-trait-bar"><div class="tt-trait-fill" style="width:${(p.agreeableness||0.5)*100}%;background:var(--green)"></div></div></div>
+      <div class="tt-trait"><span style="width:62px">energy</span><div class="tt-trait-bar"><div class="tt-trait-fill" style="width:${(p.energy||0.5)*100}%;background:var(--peach)"></div></div></div>
+    </div>
+  `;
+  tt.style.left = (event.pageX + 12) + "px";
+  tt.style.top = (event.pageY - 8) + "px";
+  tt.style.opacity = 1;
+}
+
+function hideTooltip() {
+  document.getElementById("tooltip").style.opacity = 0;
+}
+
+// ── Helpers ────────────────────────────────────────────────
+function setPhase(title, sub) {
+  const el = document.getElementById("phase-indicator");
+  el.innerHTML = `${title}${sub ? `<div class="sub">${sub}</div>` : ""}`;
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+</script>
+</body>
+</html>
