@@ -103,7 +103,7 @@ This is the "limit search intelligently" hint from the takehome—social proximi
 
 ---
 
-## The Propagation Flywheel 🔥
+## The Propagation Flywheel
 
 Once a group is recommended, the system simulates how that recommendation propagates through the social network:
 
