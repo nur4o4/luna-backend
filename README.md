@@ -51,7 +51,7 @@ GroupScore =
 
 ### Design Decisions
 
-#### 1. **We Score GROUPS, Not Individuals** ⭐
+#### 1. **Score GROUPS, Not Individuals** ⭐
 
 Most recommendation systems ask: *"Which of my friends would like this place?"*
 
@@ -163,9 +163,5 @@ numpy>=1.20
 
 Install with:
 ```bash
-pip install -r requirements.txt
+pip install matplotlib networkx numpy
 ```
-
-(Or just `pip install matplotlib networkx numpy` if no requirements.txt exists)
-
-data
